@@ -47,8 +47,8 @@ io.use(function (socket, next) {
 
 const url = require('url');
 const base64id = require('base64id');
-const hostname = 'localhost';
 const port = process.env.PORT || 3003;
+const hostname = port == 3003 ? 'localhost': process.env.hostname;
 
 // TODO this needs to be dynamic
 let nsp = 'sisters';
