@@ -679,11 +679,13 @@ io.on('reconnect', (socket) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, './lct-b')));
+//app.use(express.static(path.join(__dirname, './lct-b')));
 // app.use('/lct-b', express.static(path.join(__dirname, './dist/lct-b')));
 
 // app.use('/dist', express.static('lct-a-visitor'));
 // app.use('/dist', express.static('lct-a-room'));
+
+app.use(express.static(path.join(__dirname, './dist')));
 
 http.listen(port, hostname, () => {
   console.log(info(`Server.js Build: ${version}`));
